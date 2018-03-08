@@ -35,7 +35,7 @@
                 </thead>
                 <tbody>
                 <tr th:each="article : ${articles}">
-                    <a th:href="@{url} (url=${article.url})}"><td th:text="${article.title}"></td></a>
+                    <a th:href="${article.url}"><td  th:text="${article.title}"></td></a>
                     <td th:text="${article.author}"></td>
                     <td th:text="${article.description}"></td>
 

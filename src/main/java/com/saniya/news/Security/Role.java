@@ -5,10 +5,10 @@ import javax.validation.constraints.NotNull;
 import java.util.Set;
 import com.saniya.news.Security.User;
 
+@Entity
 public class Role {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(unique = true)
@@ -48,6 +48,10 @@ public class Role {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public void addUser(User user){
+        this.users.add(user);
     }
 
     @Override

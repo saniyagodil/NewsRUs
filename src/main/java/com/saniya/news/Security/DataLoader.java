@@ -28,7 +28,6 @@ public class DataLoader implements CommandLineRunner {
         newUser.setPassword("password");
         userRepository.save(newUser);
 
-
     }
 
 }

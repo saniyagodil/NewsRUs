@@ -80,11 +80,11 @@
                     <td th:text="${entertainmentarticle.description}"></td>
 
                 </tr>
-                <span>interests</span>
+                <!--<span>interests</span>-->
                 <tr th:each="interest : ${interests}">
                     <td>Interest</td>
                     <td><a th:href="${interest.url}" th:inline="text">[[${interest.title}]]</a></td>
-                    <td th:text="$interest.author}"></td>
+                    <td th:text="${interest.author}"></td>
                     <td th:text="${interest.description}"></td>
 
                 </tr>

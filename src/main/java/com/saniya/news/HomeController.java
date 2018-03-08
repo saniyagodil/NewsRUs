@@ -59,7 +59,6 @@ public class HomeController {
         user.addRole(roleRepository.findRoleByRoleName("USER"));
         userRepository.save(user);
         Set<String> categories = getCategories(user);
-        System.out.print(categories);
         return "redirect:/login";
     }
 
@@ -77,13 +76,17 @@ public class HomeController {
             model.addAttribute(category, news1.getArticles());
         }
 
-        String interestUrl = "https://newsapi.org/v2/top-headlines?country=us&q=";
-
+        String interestUrl = "https://newsapi.org/v2/everything?q=";
+        String iKey = "&sortBy=publishedAt&apiKey=bb79a951a7d246de9c757bdeb63d24c5";
         for(Interest interest: user.getInterests()){
+            System.out.println(interest.getName());
             RestTemplate restTemplate = new RestTemplate();
-            String iUrl = interestUrl + interest.getName() + key;
+            String iUrl = interestUrl + interest.getName() + iKey;
+            System.out.println(iUrl);
             News news1= restTemplate.getForObject(iUrl, News.class);
-            articles.addAll(news1.getArticles());
+            for(Article article : news1.getArticles()){
+                articles.add(article);
+            }
 
         }
         model.addAttribute("interests", articles);

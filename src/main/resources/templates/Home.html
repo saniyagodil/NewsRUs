@@ -10,9 +10,10 @@
     <style>
         body {background-color: rebeccapurple;}
         h1 {color: black;}
-        h3 {color: darkorchid;}
+        h3 {color: darkorchid;}go
         th {color: black;}
         td {color: black;}
+        a  {color: black}
         .jumbotron {background-color: mediumpurple;}
     </style>
 </head>
@@ -26,7 +27,7 @@
         <div>
             <table class="table">
                 <thead>
-                <tr>
+                    <tr>
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Description</th>
@@ -34,12 +35,14 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr th:each="article : ${articles}">
-                    <a th:href="${article.url}"><td  th:text="${article.title}"></td></a>
-                    <td th:text="${article.author}"></td>
-                    <td th:text="${article.description}"></td>
-
-                </tr>
+                    <tr th:each="article : ${articles}">
+                        <td><a th:href="${article.url}" th:inline="text">[[${article.title}]]</a></td>
+                        <!--<td th:href="${article.url}" th:inline="text">[[${article.title}]]</td>-->
+                    <!--<a th:href="${article.url}"><td  th:text="${article.title}"></td></a>-->
+                        <td th:text="${article.author}"></td>
+                        <td th:text="${article.description}"></td>
+                    <!--<a th:href="${article.url}" th:inline="text">[[${article.title}]]</a>-->
+                    </tr>
                 </tbody>
             </table>
             <br /><br />

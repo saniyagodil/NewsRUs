@@ -1,0 +1,39 @@
+.jumbotron {
+    background-color: cornsilk;
+}
+
+html {
+    background-color: cornflowerblue;
+}
+
+th{
+    color: darkblue;
+}
+
+
+.collapse {
+    background-color: #e0c4ed;
+}
+
+/*#6b208e*/
+
+h1{
+    color:darkblue;
+}
+
+.img-circle {
+    border-radius: 50%;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    -moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+/*div {*/
+    /*background-color: paleturquoise;*/
+/*}*/
+
+nav {
+    background-color: #e0c4ed;
+}

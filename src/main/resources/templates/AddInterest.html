@@ -13,7 +13,7 @@
         h3 {color: darkorchid;}
         th {color: black;}
         td {color: black;}
-        a  {color: black}
+        span {background-color: #e0c4ed}
         .jumbotron {background-color: mediumpurple;}
     </style>
 </head>
@@ -24,30 +24,13 @@
 <div class="container">
     <div class="jumbotron">
 
-        <div>
-            <table class="table">
-                <thead>
-                    <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Description</th>
-
-                </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="article : ${articles}">
-                        <td><a th:href="${article.url}" th:inline="text">[[${article.title}]]</a></td>
-                        <!--<td th:href="${article.url}" th:inline="text">[[${article.title}]]</td>-->
-                    <!--<a th:href="${article.url}"><td  th:text="${article.title}"></td></a>-->
-                        <td th:text="${article.author}"></td>
-                        <td th:text="${article.description}"></td>
-                    <!--<a th:href="${article.url}" th:inline="text">[[${article.title}]]</a>-->
-                    </tr>
-                </tbody>
-            </table>
-            <br /><br />
-
-        </div>
+        <form action="#" th:action="@{/newinterest}" th:object="${interest}" method="post">
+            <input type="hidden" th:field="*{id}" />
+            Name : <input type="text" th:field="*{name}" />
+            <span th:if="${#fields.hasErrors('name')}"
+                  th:errors="*{name}"></span><br />
+            <input type="submit" value="Submit" />
+        </form><br /><br />
 
     </div>
 </div>

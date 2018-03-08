@@ -13,7 +13,6 @@
         h3 {color: darkorchid;}
         th {color: black;}
         td {color: black;}
-        a  {color: black}
         .jumbotron {background-color: mediumpurple;}
     </style>
 </head>
@@ -27,27 +26,22 @@
         <div>
             <table class="table">
                 <thead>
-                    <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Description</th>
-
+                <tr>
+                    <th scope="col">Interests</th>
                 </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="article : ${articles}">
-                        <td><a th:href="${article.url}" th:inline="text">[[${article.title}]]</a></td>
-                        <!--<td th:href="${article.url}" th:inline="text">[[${article.title}]]</td>-->
-                    <!--<a th:href="${article.url}"><td  th:text="${article.title}"></td></a>-->
-                        <td th:text="${article.author}"></td>
-                        <td th:text="${article.description}"></td>
-                    <!--<a th:href="${article.url}" th:inline="text">[[${article.title}]]</a>-->
-                    </tr>
+                <tr th:each="interest : ${interests}">
+                    <td th:text="${interest.name}"></td>
+                </tr>
                 </tbody>
             </table>
             <br /><br />
 
         </div>
+
+        <a class="btn btn-primary btn-small" href="/newinterest" role="button">Add New Interest</a><br />
+
 
     </div>
 </div>

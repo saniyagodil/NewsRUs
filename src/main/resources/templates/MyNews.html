@@ -21,8 +21,8 @@
 
 <body>
 <div th:replace="Base :: navlinks"></div>
-<div class="container">
-    <div class="jumbotron">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
 
         <div>
             <table class="table">
@@ -30,21 +30,34 @@
                 <tr>
                     <th scope="col">Category</th>
                     <th scope="col">Title</th>
+                    <th scope="col">Image</th>
                     <th scope="col">Author</th>
                     <th scope="col">Description</th>
 
                 </tr>
                 </thead>
                 <tbody>
+
+                <tr th:each="interest : ${interests}">
+                    <td>Interest</td>
+                    <td><a th:href="${interest.url}" th:inline="text">[[${interest.title}]]</a></td>
+                    <td><img th:src='${interest.urlToImage}' width="200" height="150"/></td>
+                    <td th:text="${interest.author}"></td>
+                    <td th:text="${interest.description}"></td>
+
+                </tr>
+
                 <tr th:each="businessarticle : ${businessarticles}">
                     <td>Business</td>
                     <td><a th:href="${businessarticle.url}" th:inline="text">[[${business.title}]]</a></td>
+                    <td><img th:src='${businessarticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${businessarticle.author}"></td>
                     <td th:text="${businessarticle.description}"></td>
                 </tr>
                 <tr th:each="sciencearticle : ${sciencearticles}">
                     <td>Science</td>
                     <td><a th:href="${sciencearticle.url}" th:inline="text">[[${sciencearticle.title}]]</a></td>
+                    <td><img th:src='${sciencearticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${sciencearticle.author}"></td>
                     <td th:text="${sciencearticle.description}"></td>
                 </tr>
@@ -52,42 +65,41 @@
                 <tr th:each="technologyarticle : ${technologyarticles}">
                     <td>Technology</td>
                     <td><a th:href="${technologyarticle.url}" th:inline="text">[[${technologyarticle.title}]]</a></td>
+                    <td><img th:src='${technologyarticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${technologyarticle.author}"></td>
                     <td th:text="${technologyarticle.description}"></td>
                 </tr>
                 <tr th:each="healtharticle : ${healtharticles}">
                     <td>Health</td>
                     <td><a th:href="${healtharticle.url}" th:inline="text">[[${healtharticle.title}]]</a></td>
+                    <td><img th:src='${healtharticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${healtharticle.author}"></td>
                     <td th:text="${healtharticle.description}"></td>
                 </tr>
                 <tr th:each="generalarticle : ${generalarticles}">
                     <td>General</td>
                     <td><a th:href="${generalarticle.url}" th:inline="text">[[${generalarticle.title}]]</a></td>
+                    <td><img th:src='${generalarticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${generalarticle.author}"></td>
                     <td th:text="${generalarticle.description}"></td>
                 </tr>
                 <tr th:each="sportsarticle : ${sportsarticles}">
                     <td>Sports</td>
                     <td><a th:href="${sportsarticle.url}" th:inline="text">[[${sportsarticle.title}]]</a></td>
+                    <td><img th:src='${sportsarticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${sportsarticle.author}"></td>
                     <td th:text="${sportsarticle.description}"></td>
                 </tr>
                 <tr th:each="entertainmentarticle : ${entertainmentarticles}">
                     <td>Entertainment</td>
                     <td><a th:href="${entertainmentarticle.url}" th:inline="text">[[${entertainmentarticle.title}]]</a></td>
+                    <td><img th:src='${entertainmentarticle.urlToImage}' width="200" height="150"/></td>
                     <td th:text="${entertainmentarticle.author}"></td>
                     <td th:text="${entertainmentarticle.description}"></td>
 
                 </tr>
                 <!--<span>interests</span>-->
-                <tr th:each="interest : ${interests}">
-                    <td>Interest</td>
-                    <td><a th:href="${interest.url}" th:inline="text">[[${interest.title}]]</a></td>
-                    <td th:text="${interest.author}"></td>
-                    <td th:text="${interest.description}"></td>
 
-                </tr>
                 </tbody>
             </table>
 

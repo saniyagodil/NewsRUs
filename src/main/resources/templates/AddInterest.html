@@ -21,8 +21,8 @@
 
 <body>
 <div th:replace="Base :: navlinks"></div>
-<div class="container">
-    <div class="jumbotron">
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
 
         <form action="#" th:action="@{/newinterest}" th:object="${interest}" method="post">
             <input type="hidden" th:field="*{id}" />

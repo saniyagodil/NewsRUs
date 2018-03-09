@@ -41,7 +41,10 @@
                 <tr th:each="interest : ${interests}">
                     <td>Interest</td>
                     <td><a th:href="${interest.url}" th:inline="text">[[${interest.title}]]</a></td>
-                    <td><img th:src='${interest.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(interest.urlToImage)}"><img th:src='${interest.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(interest.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${interest.author}"></td>
                     <td th:text="${interest.description}"></td>
 
@@ -49,15 +52,21 @@
 
                 <tr th:each="businessarticle : ${businessarticles}">
                     <td>Business</td>
-                    <td><a th:href="${businessarticle.url}" th:inline="text">[[${business.title}]]</a></td>
-                    <td><img th:src='${businessarticle.urlToImage}' width="200" height="150"/></td>
+                    <td><a th:href="${businessarticle.url}" th:inline="text">[[${businessarticle.title}]]</a></td>
+
+                    <td th:if="${not #strings.isEmpty(businessarticle.urlToImage)}"><img th:src='${businessarticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(businessarticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${businessarticle.author}"></td>
                     <td th:text="${businessarticle.description}"></td>
                 </tr>
                 <tr th:each="sciencearticle : ${sciencearticles}">
                     <td>Science</td>
                     <td><a th:href="${sciencearticle.url}" th:inline="text">[[${sciencearticle.title}]]</a></td>
-                    <td><img th:src='${sciencearticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(sciencearticle.urlToImage)}"><img th:src='${sciencearticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(sciencearticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${sciencearticle.author}"></td>
                     <td th:text="${sciencearticle.description}"></td>
                 </tr>
@@ -65,35 +74,57 @@
                 <tr th:each="technologyarticle : ${technologyarticles}">
                     <td>Technology</td>
                     <td><a th:href="${technologyarticle.url}" th:inline="text">[[${technologyarticle.title}]]</a></td>
-                    <td><img th:src='${technologyarticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(technologyarticle.urlToImage)}"><img th:src='${technologyarticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(technologyarticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${technologyarticle.author}"></td>
                     <td th:text="${technologyarticle.description}"></td>
                 </tr>
+
+
                 <tr th:each="healtharticle : ${healtharticles}">
                     <td>Health</td>
                     <td><a th:href="${healtharticle.url}" th:inline="text">[[${healtharticle.title}]]</a></td>
-                    <td><img th:src='${healtharticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(healtharticle.urlToImage)}"><img th:src='${healtharticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(healtharticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
+
                     <td th:text="${healtharticle.author}"></td>
                     <td th:text="${healtharticle.description}"></td>
                 </tr>
+
+
+
                 <tr th:each="generalarticle : ${generalarticles}">
                     <td>General</td>
                     <td><a th:href="${generalarticle.url}" th:inline="text">[[${generalarticle.title}]]</a></td>
-                    <td><img th:src='${generalarticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(generalarticle.urlToImage)}"><img th:src='${generalarticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(generalarticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
+
                     <td th:text="${generalarticle.author}"></td>
                     <td th:text="${generalarticle.description}"></td>
                 </tr>
                 <tr th:each="sportsarticle : ${sportsarticles}">
                     <td>Sports</td>
                     <td><a th:href="${sportsarticle.url}" th:inline="text">[[${sportsarticle.title}]]</a></td>
-                    <td><img th:src='${sportsarticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(sportsarticle.urlToImage)}"><img th:src='${sportsarticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(sportsarticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${sportsarticle.author}"></td>
                     <td th:text="${sportsarticle.description}"></td>
                 </tr>
                 <tr th:each="entertainmentarticle : ${entertainmentarticles}">
                     <td>Entertainment</td>
                     <td><a th:href="${entertainmentarticle.url}" th:inline="text">[[${entertainmentarticle.title}]]</a></td>
-                    <td><img th:src='${entertainmentarticle.urlToImage}' width="200" height="150"/></td>
+
+                    <td th:if="${not #strings.isEmpty(entertainmentarticle.urlToImage)}"><img th:src='${entertainmentarticle.urlToImage}' width="200" height="150"/></td>
+                    <td th:if="${#strings.isEmpty(entertainmentarticle.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
+
                     <td th:text="${entertainmentarticle.author}"></td>
                     <td th:text="${entertainmentarticle.description}"></td>
 

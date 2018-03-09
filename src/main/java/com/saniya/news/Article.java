@@ -17,6 +17,7 @@ public class Article {
     private String urlToImage;
 
     public Article() {
+//        this.urlToImage = "/Images/newsicon.png";
     }
 
     public Source getSource() {

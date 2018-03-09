@@ -39,10 +39,11 @@
                 </thead>
                 <tbody>
 
-                <!--urlToImage-->
                     <tr th:each="article : ${articles}">
                         <td><a th:href="${article.url}" th:inline="text">[[${article.title}]]</a></td>
-                        <td><img th:src='${article.urlToImage}' width="200" height="150"/></td>
+                        <!--<td><img th:src='${article.urlToImage}' width="200" height="150"/></td>-->
+                        <td th:if="${not #strings.isEmpty(article.urlToImage)}"><img th:src='${article.urlToImage}' width="200" height="150"/></td>
+                        <td th:if="${#strings.isEmpty(article.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
                         <td th:text="${article.author}"></td>
                         <td th:text="${article.description}"></td>
 

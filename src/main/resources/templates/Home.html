@@ -7,23 +7,16 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link href="/css/stylesheet.css" type="text/css" rel="stylesheet"/>
     <title>News R Us</title>
-    <style>
-        body {background-color: rebeccapurple;}
-        h1 {color: black;}
-        h3 {color: darkorchid;}
-        th {color: black;}
-        td {color: black;}
-        a  {color: black}
-        .jumbotron {background-color: mediumpurple;}
-    </style>
+
 </head>
 
 
 <body>
+
 <div th:replace="Base :: navlinks"></div>
 
-
 <div class="jumbotron jumbotron-fluid">
+
     <div class="container">
 
         <div>
@@ -35,13 +28,12 @@
                     <th scope="col">Author</th>
                     <th scope="col">Description</th>
 
-                </tr>
+                    </tr>
                 </thead>
                 <tbody>
 
                     <tr th:each="article : ${articles}">
                         <td><a th:href="${article.url}" th:inline="text">[[${article.title}]]</a></td>
-                        <!--<td><img th:src='${article.urlToImage}' width="200" height="150"/></td>-->
                         <td th:if="${not #strings.isEmpty(article.urlToImage)}"><img th:src='${article.urlToImage}' width="200" height="150"/></td>
                         <td th:if="${#strings.isEmpty(article.urlToImage)}"><img src="/Images/newsicon.png" width="175" height="175"/></td>
                         <td th:text="${article.author}"></td>
@@ -50,7 +42,6 @@
                     </tr>
                 </tbody>
             </table>
-            <br /><br />
 
         </div>
 

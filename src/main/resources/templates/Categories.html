@@ -7,15 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link href="/css/stylesheet.css" type="text/css" rel="stylesheet"/>
     <title>News R Us</title>
-    <style>
-        body {background-color: rebeccapurple;}
-        h1 {color: black;}
-        h3 {color: darkorchid;}
-        th {color: black;}
-        td {color: black;}
-        span {background-color: #e0c4ed}
-        .jumbotron {background-color: mediumpurple;}
-    </style>
+
 </head>
 
 
@@ -24,27 +16,14 @@
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
 
-        <h3>Categories of Interest</h3>
+        <h3>Select News Categories</h3>
         <span>
             <form action="#" th:action="@{/categories}" th:object="${user}" method="post">
                 <input type="hidden" th:field="*{id}" />
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="hidden" th:field="*{username}" id="inputEmail3"/>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="hidden" th:field="*{password}" id="inputPassword3" />
-                    </div>
-                </div>
-                 <div class="form-group row">
-                    <div class="col-sm-10">
-                        <input type="hidden" th:field="*{interests}"/>
-                    </div>
-                </div>
+                <input type="hidden" th:field="*{username}" />
+                <input type="hidden" th:field="*{password}"  />
+                <input type="hidden" th:field="*{interests}" />
 
-                    <div class="col-sm-2">Categories of Interest</div>
                     <div class="col-sm-10">
                         <div class="form-check">
                             <input th:field="*{business}" value="yes" class="form-check-input" type="checkbox" id="business">
@@ -102,10 +81,10 @@
                         </label>
                     </div>
                 </div>
-
+                <br />
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <input type="submit" value="Submit" />
+                        <input class="btn btn-primary btn-small typeone " type="submit" value="Update" />
                     </div>
                 </div>
             </form>

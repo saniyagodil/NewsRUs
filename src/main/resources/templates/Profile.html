@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
     <link href="/css/stylesheet.css" type="text/css" rel="stylesheet"/>
     <title>News R Us</title>
-    <style>
-        body {background-color: rebeccapurple;}
-        h1 {color: black;}
-        h3 {color: darkorchid;}
-        th {color: black;}
-        td {color: black;}
-        .jumbotron {background-color: mediumpurple;}
-    </style>
+
 </head>
 
 
@@ -22,9 +15,12 @@
 <div th:replace="Base :: navlinks"></div>
 <div class="jumbotron jumbotron-fluid">
     <div class="container">
+        <h2>Modify Settings</h2>
+        <h4>Customize what shows up on your Feed</h4><br/><br />
+        <a class="btn btn-primary btn-small typeone " href="/categories" role="button">View Categories</a><br /><br/>
+        <a class="btn btn-primary btn-small typeone " href="/interests" role="button">View Interests</a><br />
 
-        <a class="btn btn-primary btn-small" href="/categories" role="button">View Categories</a><br />
-        <a class="btn btn-primary btn-small" href="/interests" role="button">View Interests</a><br />
+        <p class="text-center"></p>
     </div>
 </div>
 

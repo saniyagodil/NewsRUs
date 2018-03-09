@@ -1,4 +1,9 @@
 .jumbotron {
+    background-color: #a675d8;
+
+}
+
+.tableone {
     background-color: #e0c4ed;
 }
 
@@ -7,25 +12,30 @@ html {
 }
 
 .collapse {
-    background-color: #e0c4ed;
+    background-color: #a675d8;
 }
 
 span {
-    background-color: #e0c4ed
+    background-color: #a675d8;
 }
+
+div {
+    color: #3e0d70;
+}
+
 
 /*#6b208e*/
 
 h1 {
-    color: black;
+    color: #3e0d70;
 }
 
 h2 {
-    color: rebeccapurple;
+    color: #3e0d70;
 }
 
 h3 {
-    color: rebeccapurple;
+    color: #3e0d70;
 }
 
 th {
